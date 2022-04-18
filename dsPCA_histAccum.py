@@ -9,8 +9,20 @@ from dspca.dspca import dsPCA
 from sklearn.decomposition import PCA
 import numpy as np
 import matplotlib
+import csv
 from matplotlib import pyplot as plt
 from dspca.utils import adjust_lightness
+
+file = open("Salary_Data.csv")
+csvreader = csv.reader(file)
+header = next(csvreader)
+print(header)
+rows = []
+for row in csvreader:
+    rows.append(row)
+print(rows)
+file.close()
+
 
 with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as data:
     dQ = data['dQ']  # Target
