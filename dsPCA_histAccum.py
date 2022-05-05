@@ -10,22 +10,12 @@ from sklearn.decomposition import PCA
 import numpy as np
 import matplotlib
 import csv
-import scipy.io as sio
+import scipy.io as spio
 from matplotlib import pyplot as plt
 from dspca.utils import adjust_lightness
 
-file = open(r'C:\Users\lucid\OneDrive\Documents\GitHub\computeTopLevelScripts\Proj\dimensionRed\dsPCA\Data\Mouse1S1_activity.csv')
-csvreader = csv.reader(file)
-header = next(csvreader)
-print(header)
-rows = []
-for row in csvreader:
-    rows.append(row)
-print(rows)
-file.close()
 
-with open(r'C:\Users\lucid\OneDrive\Documents\GitHub\computeTopLevelScripts\Proj\dimensionRed\dsPCA\Data\Mouse1S1_activity.csv') as file_name:
-    array = np.loadtxt(file_name, delimiter=",")
+matDataImport = spio.loadmat(r'C:\Users\lucid\OneDrive\Documents\GitHub\computeTopLevelScripts\Proj\dimensionRed\dsPCA\Data\Mouse1S1_activity.mat') 
 
 
 with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as data:
@@ -33,6 +23,12 @@ with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as
     Qch = data['Qch']  # Target
     sQ = data['sQ']  # Target
     activity = data['activity']  # Neural population activity (Trial X Time X Cell)
+    
+    
+dQ2 = matDataImport['dQ']  # Target
+Qch2 = matDataImport['Qch']  # Target
+sQ2 = matDataImport['sQ']  # Target
+activity2 = matDataImport['TAct']  # Neural population activity (Trial X Time X Cell)
     
 #     targets = np.vstack((dQ, Qch, sQ)).T    # Target task-related variables
 # time_range = np.arange(10, 15)  # Time range used to identify subspaces
