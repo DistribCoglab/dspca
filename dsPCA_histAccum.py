@@ -18,17 +18,17 @@ from dspca.utils import adjust_lightness
 matDataImport = spio.loadmat(r'C:\Users\lucid\OneDrive\Documents\GitHub\computeTopLevelScripts\Proj\dimensionRed\dsPCA\Data\Mouse1S1_activity.mat') 
 
 
-with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as data:
-    dQ = data['dQ']  # Target
-    Qch = data['Qch']  # Target
-    sQ = data['sQ']  # Target
-    activity = data['activity']  # Neural population activity (Trial X Time X Cell)
+# with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as data:
+#     dQ = data['dQ']  # Target
+#     Qch = data['Qch']  # Target
+#     sQ = data['sQ']  # Target
+#     activity = data['activity']  # Neural population activity (Trial X Time X Cell)
     
     
-dQ2 = matDataImport['dQ']  # Target
-Qch2 = matDataImport['Qch']  # Target
-sQ2 = matDataImport['sQ']  # Target
-activity2 = matDataImport['TAct']  # Neural population activity (Trial X Time X Cell)
+# dQ2 = matDataImport['dQ']  # Target
+# Qch2 = matDataImport['Qch']  # Target
+# sQ2 = matDataImport['sQ']  # Target
+# activity2 = matDataImport['TAct']  # Neural population activity (Trial X Time X Cell)
     
 #     targets = np.vstack((dQ, Qch, sQ)).T    # Target task-related variables
 # time_range = np.arange(10, 15)  # Time range used to identify subspaces
