@@ -12,7 +12,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 from dspca.utils import adjust_lightness
 
-with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\dspca\data\data.npz') as data:
+with np.load(r'C:\Users\lucid\OneDrive\Documents\GitHub\computeTopLevelScripts\Proj\dimensionRed\dsPCA\dspca\data\exampledata.npz') as data:
     dQ = data['dQ']  # Target
     Qch = data['Qch']  # Target
     sQ = data['sQ']  # Target
